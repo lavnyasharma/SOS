@@ -1,0 +1,194 @@
+@import "./variables.css";
+
+/*
+    --BoxMajor:#444444;
+    --BoxLight:#f2f2f2;
+    --FontDarkMajor:#fff;
+    --FontDarkMinor:#f2f2f2;
+    --FontMajor:#444444;
+    --FontMinor:#929292;
+    --Raleway: "Raleway", sans-serif;
+*/
+/*for main screen ie. landing page*/
+.mnsrc {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-right: 20px;
+  overflow: scroll;
+  display: flex;
+  margin-top: 20%;
+  align-items: center;
+  flex-flow: column;
+  padding-bottom: 4em;
+  flex-wrap: nowrap;
+  user-select: none;
+}
+
+.circle-cntnr {
+  width: 100%;
+  height: 40%;
+  background-color: transparent;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  border: none;
+  -webkit-box-shadow: 0 0 10px var(--BoxMajor);
+  -moz-box-shadow: 0 0 10px var(--BoxMajor);
+  box-shadow: 0 0 10px var(--BoxMajor);
+  background-color: var(--BoxMajor);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+.start {
+  animation: border infinite 5s;
+}
+
+.txt-crcl {
+  animation: hanimation infinite 5s;
+}
+@keyframes hanimation {
+  0% {
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes border {
+  0% {
+  }
+  100% {
+    -webkit-box-shadow: 0 0 10px #e94e3d;
+    -moz-box-shadow: 0 0 10px #e94e3d;
+    box-shadow: 0 0 10px #e94e3d;
+    background-color: #e94e3d;
+    color: white;
+  }
+}
+
+.circle h1 {
+  font-weight: bold;
+  font-size: 4em;
+  color: var(--BoxMinor);
+}
+.circle h5 {
+  font-weight: bold;
+  opacity: 0.8;
+  color: var(--FontMinor);
+}
+.circle h1,
+.circle h5 {
+  margin: 0;
+}
+
+.msg {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg .kpclm {
+  width: 100%;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--FontMajor);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.msg .bdy {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--FontMinor);
+}
+
+.vslbtn {
+  width: auto;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  height: 30px;
+  background-color: var(--BoxMajor);
+  border-radius: 10px;
+  color: var(--BoxMinor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flscrn {
+  position: absolute;
+  background-color: black;
+  color: #fff;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  z-index: 9999;
+}
+.flscrn .txt{
+  text-align: center;
+  
+  text-transform: uppercase;
+
+}
+
+.bgg{
+  font-size: 2em;
+
+}
+.smll{
+  font-size: 0.8em;
+}
+
+.stpbtn{
+  width: auto;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  height: 30px;
+  background-color: var(--BoxMajor);
+  border-radius: 8px;
+  color: var(--BoxMinor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.flsh{
+  animation: flash infinite 1s;
+} 
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

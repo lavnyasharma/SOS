@@ -1,0 +1,143 @@
+.image-main {
+  background: var(--background);
+  z-index: 9999;
+  height: 100%;
+}
+.image-main .head {
+  width: 100%;
+  height: 8%;
+  background: transparent;
+}
+.image-main .head .parts {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  float: left;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.image-main .head .parts .back {
+  width: 70%;
+  height: 60%;
+  background: var(--searchbar);
+  border-radius: 8px;
+  color: var(--FontMajor);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+}
+.image-main .head .parts button:disabled {
+  background: var(--searchbar);
+  color: var(--FontMajor);
+  opacity: 0.5;
+}
+
+.image-main .image-body {
+  width: 100%;
+  height: 92%;
+  padding: 20px 20px;
+}
+.image-upload {
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  background: var(--searchbar);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--FontMajor);
+}
+.image-upload input {
+  width: 100%;
+  height: 100%;
+  background: violet;
+  opacity: 0;
+}
+.image-upload span {
+  position: absolute;
+}
+
+.cropper-line {
+  background: transparent;
+}
+
+.cropper-point {
+  background: white;
+}
+.cropper-view-box {
+  outline: 2px solid white;
+}
+.cropper-point.point-se {
+  height: 5px;
+  width: 5px;
+}
+
+.crpr {
+  z-index: 9999;
+
+  height: 100%;
+  width: 100%;
+  padding: 20px 20px;
+  position: absolute;
+  background: var(--background);
+}
+.crpr .close {
+  color: var(--FontMajor);
+  position: relative;
+  background: var(--searchbar);
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  left: 100%;
+  transform: translateX(-90%);
+  float: left;
+  z-index: 99999;
+
+}
+.crpr .crop {
+  color: var(--FontMajor);
+  position: absolute;
+  z-index: 99999;
+
+  float: left;
+  background: var(--searchbar);
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.result-wrapper {
+  margin-top: 50px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cropped-result {
+  width: 40%;
+  background: var(--background);
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.cropped-result .img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 9/16;
+}

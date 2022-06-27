@@ -1,0 +1,78 @@
+@import "./variables.css";
+.TopNav {
+  width: 100%;
+  min-height: 4.2em;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  background-color: var(--nav-bg-color);
+}
+/*menue button and avatar*/
+.M_m {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--BoxMajor);
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-weight: bold;
+  color: var(--BoxMajor);
+  background-clip: border-box;
+}
+
+/*for name tag*/
+.N_T {
+  height: 3rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  flex-grow: 1;
+  color: var(--FontMajor);
+  text-transform: capitalize;
+}
+
+/*for dots*/
+
+.headinput {
+  width: 50%;
+  height: 80%;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--BoxMajor);
+  outline: none;
+  color: var(--FontMajor);
+  text-transform: capitalize;
+}
+.headinput:focus {
+  border-bottom: 2px solid var(--active);
+}
+
+.svbtm {
+  background: var(--searchbar);
+  text-align: center;
+  border: none;
+  width: 10%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  outline: none;
+  color: var(--FontMajor);
+  font-size: 0.8em;
+  text-transform: lowercase;
+}

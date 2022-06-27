@@ -1,0 +1,37 @@
+:root {
+  --BoxMajor: #444444;
+  --BoxMinor: #ededed;
+  --FontMajor: #444444;
+  --FontMinor: #868686;
+  --Raleway: "Raleway", sans-serif;
+  --nav-bg-color: #fff;
+  --background: #fff;
+  --searchbar: rgba(143, 209, 192, 0.11);
+  --active: #2d96f8;
+  --active-text: #fff;
+  --searchbar-focus: rgba(143, 209, 193, 0.349);
+  --placeholder: #9b9b9b;
+  --setting-item-background: #f2f2f283;
+  --error : #ed4337;
+  --blackout:#00000067;
+  --df-hf:rgba(143, 209, 192, 0.11);
+
+}
+
+/*for dark color*/
+:root {
+  --DBoxMajor: #eeeeee;
+  --DBoxMinor: #1c1c1c;
+  --Dsetting-item-background: #393e46;
+  --DFontMajor: #eeeeee;
+  --DFontMinor: #a5a5a5;
+  --DRaleway: "Raleway", sans-serif;
+  --Dnav-bg-color: #222831;
+  --Dbackground: #222831;
+  --Dsearchbar: #393e46;
+  --Dactive: #e4e4e4;
+  --Dactive-text: #393e46;
+  --Dsearchbar-focus: rgba(197, 197, 197, 0.349);
+  --Dplaceholder: #e2e2e2;
+  --Ddf-hf:#393e46;
+}

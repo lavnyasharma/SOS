@@ -1,0 +1,45 @@
+.popup-body {
+  width: 100%;
+  height: 3em;
+  background-color: transparent;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  justify-content: center;
+  flex-flow: row;
+
+  transition: 0.2s;
+}
+
+.popup-box {
+  height: auto;
+  width: auto;
+  padding: 10px 20px;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-rendering: geometricPrecision;
+}
+
+.err {
+  background-color: rgba(250, 121, 121, 0.089);
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+.sucss {
+  background-color: #4bb5431f;
+  border: 1px solid #4BB543;
+  color: #4BB543;
+
+}
+
+.popup-box::first-letter{
+  text-transform: capitalize;
+}

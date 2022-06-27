@@ -1,0 +1,363 @@
+.main-doc-body {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--background);
+  user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main-doc-body .head {
+  width: 100%;
+  height: 25%;
+  margin-top: 20px;
+}
+.main-doc-body .head .head-left {
+  width: 40%;
+  height: 100%;
+  float: left;
+  padding-left: 20px;
+  overflow: visible;
+}
+.main-doc-body .head .head-left .holder {
+  background-color: #0278ae;
+  border-radius: 8px;
+}
+
+.main-doc-body .head .head-right {
+  width: 60%;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 5px;
+  float: left;
+  display: flex;
+  flex-flow: column;
+}
+
+.dr-name {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--FontMajor);
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+.dr-speciality {
+  height: auto;
+  width: 70%;
+
+  word-break: break-word;
+  word-wrap: break-word;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+
+  text-align: left;
+  color: var(--FontMinor);
+  margin-bottom: 8px;
+}
+.dr-location {
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--FontMinor);
+}
+
+.biography {
+  width: 100%;
+  height: auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.biography .head {
+  width: auto;
+  height: auto;
+  padding-left: 0px;
+  font-family: Raleway;
+  color: var(--FontMajor);
+  font-weight: 600;
+  line-height: 9px;
+  letter-spacing: 0.125em;
+  text-align: left;
+}
+.biography .body {
+  width: auto;
+  height: 80%;
+  font-family: Raleway;
+  font-size: 12px;
+
+  font-style: normal;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  letter-spacing: 0.06em;
+  display: block;
+  padding-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--FontMinor);
+  line-clamp: 2;
+}
+.biography .rm {
+  width: 100%;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  letter-spacing: 0.06em;
+  color: var(--FontMajor);
+  text-align: end;
+}
+
+.main-doc-body .sugges-box {
+  width: 100%;
+  height: 8%;
+  margin-top: 20px;
+}
+.main-doc-body .sugges-box .head {
+  width: 100%;
+  height: 30%;
+  padding-left: 20px;
+  text-transform: uppercase;
+
+  color: var(--FontMajor);
+  font-weight: 600;
+  line-height: 9px;
+  letter-spacing: 0.125em;
+  text-align: left;
+}
+.main-doc-body .sugges-box .body {
+  padding-top: 2px;
+  width: 100%;
+  height: 70%;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  padding-left: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.main-doc-body .sugges-box .body::-webkit-scrollbar {
+  display: none;
+}
+
+.main-doc-body .sugges-box .body .sugges-item {
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 80%;
+  white-space: nowrap;
+  background-color: var(--searchbar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: var(--Raleway);
+  color: var(--FontMajor);
+}
+
+.Schedule {
+  width: 100%;
+  height: 35%;
+  margin-top: 20px;
+}
+
+.Schedule .head {
+  width: 100%;
+  height: auto;
+
+  padding-left: 20px;
+  text-transform: uppercase;
+
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.125em;
+  color: var(--FontMajor);
+
+  text-align: left;
+}
+.Schedule .date {
+  width: 100%;
+  margin-top: 20px;
+  height: 40%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.Schedule .date::-webkit-scrollbar {
+  display: none;
+}
+.Schedule .date .title {
+  width: 100%;
+  height: 11%;
+  padding-left: 30px;
+}
+.Schedule .date .body {
+  width: 100%;
+  height: 89%;
+  padding-top: 10px;
+  display: grid;
+  grid-auto-columns: clamp(4em, 13%, 5em);
+  grid-gap: 20px;
+  grid-auto-flow: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.Schedule .date .body::-webkit-scrollbar {
+  display: none;
+}
+
+.Schedule .date .body .date-item {
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.Schedule .date .body .date-item .item {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  justify-content: center;
+}
+.Schedule .date .body .date-item .number {
+  font-weight: bold;
+  font-size: 20px;
+  display: grid;
+  align-items: end;
+}
+.Schedule .date .body .date-item .day {
+  font-size: 15px;
+  display: flex;
+  align-items: start;
+}
+
+/*time*/
+.Schedule .time {
+  width: 100%;
+  margin-top: 20px;
+  height: 30%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.Schedule .time .title {
+  width: 100%;
+  height: 14%;
+  padding-left: 30px;
+}
+
+.Schedule .time .body {
+  width: 100%;
+  height: 89%;
+  padding-top: 10px;
+  display: grid;
+  grid-auto-columns: clamp(4em, 20%, 8em);
+  grid-gap: 20px;
+  grid-auto-flow: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.Schedule .time .body::-webkit-scrollbar {
+  display: none;
+}
+
+.Schedule .time .body .time-item {
+  font-size: 13px;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  
+  border-radius: 8px;
+}
+.Schedule .time .body .time-item .t-item{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disable {
+  
+  pointer-events: none;
+  opacity: 0.5;
+  
+}
+.natural {
+  color: var(--FontMajor);
+  border: 0.5px solid var(--BoxMajor);
+  overflow: hidden;
+  
+}
+.active {
+  background-color: var(--active);
+  color: var(--active-text);
+  transition: 0.5s;
+  border: 0px;
+  transition-delay: 0.19s;
+  
+}
+
+.book-now {
+  width: 100%;
+  height: clamp(3em, 8%, 6em);
+  position: fixed;
+  bottom: 0;
+  background-color: var(--active);
+  display: flex;
+  color: var(--background);
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.footer {
+  width: 100%;
+  height: clamp(3em, 8%, 6em);
+}
+
+.ripple {
+  position: absolute;
+  background: var(--active);
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  
+  z-index: 0;
+  opacity: 0px;
+  animation: ripple 0.55s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+  }
+}

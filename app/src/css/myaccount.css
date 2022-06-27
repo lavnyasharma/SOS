@@ -1,0 +1,111 @@
+.myaccount-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--background);
+  user-select: none;
+}
+
+.myaccount-body {
+  width: 100%;
+
+  height: 100%;
+  overflow: scroll;
+  padding-top: 20px;
+
+  margin-top: 10px;
+}
+.myaccount-body::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  width: 100%;
+  height: 4.8em;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.container .full {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container .half {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+
+  float: left;
+}
+.container .half:first-child {
+  padding-right: 10px;
+}
+.container .half:last-child {
+  padding-left: 10px;
+}
+.container label {
+  height: 30%;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--FontMajor);
+  transition: 0.1s;
+}
+.container .full .full-input,
+.half .full-input {
+  outline: none;
+  border: 1px solid var(--BoxMinor);
+  height: 70%;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 0px 10px;
+  color: var(--FontMinor);
+  background-color: transparent;
+  transition: 0.1s;
+}
+
+.container .full .full-input:focus,
+.half .full-input:focus {
+  border: 2px solid var(--active);
+}
+
+.container .full .full-input:focus + label,
+.half .full-input:focus + label {
+  color: var(--active);
+}
+
+.container select {
+  -moz-appearace: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: var(--FontMajor);
+}
+.container select option {
+  background-color: var(--background);
+}
+.container select:disabled {
+  color: #bbb;
+}
+
+.save-btn {
+  width: 100%;
+  height: clamp(3em, 8%, 6em);
+  position: fixed;
+  bottom: 0;
+  background-color: var(--active);
+  display: flex;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--background);
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}

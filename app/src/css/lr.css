@@ -1,0 +1,155 @@
+/*login register styling*/
+
+.lr-body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 4;
+  background-color: var(--background);
+  user-select: none;
+  scrollbar-width: none;
+  display: flex;
+  flex-flow: column;
+}
+
+.login {
+  height: 98%;
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.login .lr-head {
+  width: 100%;
+  height: 4em;
+  color: var(--FontMajor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .lr-input {
+  width: 100%;
+  height: 4.8em;
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.login .lr-input input {
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background-color: var(--searchbar);
+  padding-left: 20px;
+}
+.login .lr-input label::before {
+  position: relative;
+}
+/* 
+input + label::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0%;
+  height: 2px;
+  background-color: var(--active);
+
+  border: 0px solid #ddd;
+  box-shadow: 0 0 0 gray inset;
+  transition: all 0.25s ease-in-out 0s;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-1100%);
+}
+input:focus + label::before {
+  width: 100%;
+  
+} */
+
+.login button {
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background-color: var(--active);
+  color: var(--active-text);
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+.lr-switch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--active);
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 4em;
+}
+.lr-forgot {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.otpinput {
+  width: 50%;
+  flex-shrink: 0;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--searchbar);
+  border-radius: 8px;
+  border: 1px solid var(--active);
+  overflow: hidden;
+}
+.otpinput input {
+  width: 80%;
+  text-align: center;
+  height: 100%;
+  border: none;
+  outline: none;
+  float: left;
+  transition: 0.3s;
+}
+.otpinput button {
+  width: 20%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--active);
+  color: var(--active-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px;
+  transition: 0.3s;
+}
+.otpinput button svg {
+  width: 70%;
+  height: 70%;
+  margin: 0px 0px;
+  stroke-width: 1px;
+  stroke: var(--active-text);
+}
+.oi {
+  height: 40%;
+}
+
+.oi .starplace::placeholder {
+  font-size: 30px;
+  transform: translateY(12px);
+}
+
+#rotppropmt,
+#rphonepropmt {
+  width: 100%;
+}
