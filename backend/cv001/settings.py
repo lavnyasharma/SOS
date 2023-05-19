@@ -10,10 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import imp
 from cv001.secrets import EMAIL_PASSWORD
 from pathlib import Path
 import os
 from datetime import timedelta
+import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,7 +75,9 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3008',
     'http://localhost:3000',
     'https://www.concric.com',
-    'https://register.concric.com'
+    'https://register.concric.com',
+
+
 ]
 
 CORS_ALLOW_HEADERS = ["accept",
@@ -112,6 +118,8 @@ WSGI_APPLICATION = 'cv001.wsgi.application'
 DATABASES = {
     'default': {
 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'ENGINE': 'django.db.backends.mysql',
         # 'NAME': 'architprasar$thesteth',
         # 'HOST': 'architprasar.mysql.pythonanywhere-services.com',
@@ -119,17 +127,17 @@ DATABASES = {
         # 'PASSWORD': '26@Prasar',
 
 
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'postgres',
-         'HOST': 'db.ydsppapwfnwhcqoposlv.supabase.co',
-         'USER': 'postgres',
-         'PASSWORD': '26@Prasarsteth',
-         'PORT ': '6543'
-        #'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'hc4',
-        #'HOST': 'localhost',
-        #'USER': 'postgres',
-        #'PASSWORD': '7889507465'
+        #  'ENGINE': 'django.db.backends.postgresql',
+        #  'NAME': 'postgres',
+        #  'HOST': 'db.ydsppapwfnwhcqoposlv.supabase.co',
+        #  'USER': 'postgres',
+        #  'PASSWORD': '26@Prasarsteth',
+        #  'PORT ': '6543'
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'hc4',
+        # 'HOST': 'localhost',
+        # 'USER': 'postgres',
+        # 'PASSWORD': '7889507465'
     }
 }
 
@@ -208,10 +216,8 @@ SIMPLE_JWT = {
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "croppo\\static")
-]
-STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "croppo\\static\\images")
 
@@ -225,4 +231,4 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'security@concric.com'
 
 
-FRONT_END_LINK = 'https://concric.com/'
+FRONT_END_LINK = 'https://animalhelp.netlify.app'

@@ -85,3 +85,5 @@ class UserProfileSer(serializers.ModelSerializer):
         model = user
         fields = ['phone_number', 'first_name',
                   'last_name', 'email', 'gender', 'age', 'pin',  'address']
+        
+        

@@ -1,9 +1,12 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import "../../../css/mainsrc.css";
 import { useHistory } from "react-router-dom";
-import { guestsos, updatecoordsos } from "./logic";
+import { guestsos, loggedsos, updatecoordsos } from "./logic";
 import NoSleep from "nosleep.js";
 import { te } from "../../global/errbox";
+import { authContext } from "../../../App";
+
+
 function openFullscreen(elem) {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -34,6 +37,8 @@ function Flscrn() {
   }
   return (
     <div style={{ height: h, width: w }} className="flscrn" id="flscrn">
+    
+    
       <div
         className="txt bgg"
         onClick={() => {
@@ -73,6 +78,7 @@ function Flscrn() {
 }
 
 function MainScrHome() {
+  const auth = useContext(authContext);
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
   function useLongPress(callback = () => {}, ms = 300) {
@@ -132,7 +138,27 @@ function MainScrHome() {
       );
       let elm = document.getElementById("flscrn");
       elm.style.display = "flex";
-    } else {
+    
+    }
+    else if (auth == "1"){
+      loggedsos(crd.latitude, crd.longitude);
+      let elm = document.getElementById("flscrn");
+      elm.style.display = "flex";
+      document.addEventListener(
+        "fullscreenchange",
+        function enableNoSleep() {
+          document.removeEventListener(
+            "fullscreenchange",
+            enableNoSleep,
+            false
+          );
+          noSleep.enable();
+        },
+        false
+      );
+      openFullscreen(elm);
+    }
+    else {
       guestsos(phone, crd.latitude, crd.longitude);
       let elm = document.getElementById("flscrn");
       elm.style.display = "flex";
@@ -160,7 +186,13 @@ function MainScrHome() {
     if (localStorage.getItem("guest_phone")) {
       setTimeout(() => {
         document.getElementById("ambutx").innerHTML =
-          "Ambulance has been dispatched";
+          "Help is on the way  <br> Dont Worry..!!! <br> For more detail please upload a pic of the incident";
+      }, 10000);
+      let id = navigator.geolocation.watchPosition(success, er);
+    } else if (auth == "1") {
+      setTimeout(() => {
+        document.getElementById("ambutx").innerHTML =
+          "Help is on the way  <br> Dont Worry..!!! <br> For more detail please upload a pic of the incident";
       }, 10000);
       let id = navigator.geolocation.watchPosition(success, er);
     } else {
@@ -173,7 +205,7 @@ function MainScrHome() {
   const [startLongPress, backspaceLongPress] = useLongPress(() => {
     // define sos press
     afterpress();
-  }, 3000);
+  }, 2000);
   let className = "";
   let h = "";
   if (startLongPress) {
@@ -186,6 +218,10 @@ function MainScrHome() {
   const history = useHistory();
   return (
     <div className="mnsrc">
+    
+      <div className="kpclms">
+        Found an Injured animal Just click the button
+      </div>
       <div className="circle-cntnr">
         <button
           className={"circle " + className}
@@ -197,27 +233,19 @@ function MainScrHome() {
             : backspaceLongPress)}
         >
           <h1 className={h}>
-            {localStorage.getItem("guest_sos") === "true" ? "Active" : "SOS"}
+            {localStorage.getItem("guest_sos") === "true" ? "Active" : "Help"}
           </h1>
           <h5 className={h}>
             {localStorage.getItem("guest_sos") === "true"
               ? "click to enable sos mode"
-              : "press for 3 seconds"}
+              : "press for 2 seconds"}
           </h5>
         </button>
       </div>
       <div className="msg">
-        <div className="kpclm">keep calm!</div>
+        <div className="kpclm">Dont Worry!!</div>
         <div className="bdy">
-          After pressing the sos button you'll get help in min 10 minutes.
-        </div>
-        <div
-          className="vslbtn"
-          onClick={() => {
-            history.push("/visuals");
-          }}
-        >
-          Report visuals
+          Your location will be shared with the nearest help centre.
         </div>
       </div>
     </div>

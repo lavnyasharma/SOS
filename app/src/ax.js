@@ -1,6 +1,7 @@
 import axios from "axios";
-const pw = "https://architprasar.pythonanywhere.com/api/";
+
 const baseURL = "http://127.0.0.1:8000/api/";
+const lcl = "http://172.20.10.12:8000/api/"
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
@@ -78,5 +79,10 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+ 
+
+
+
+
 
 export default axiosInstance;

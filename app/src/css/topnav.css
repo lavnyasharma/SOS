@@ -21,7 +21,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   font-weight: bold;
-  color: var(--BoxMajor);
+  color: #2d96f8;
   background-clip: border-box;
 }
 
@@ -51,8 +51,8 @@
   height: 80%;
   text-align: center;
   background: none;
-  border: none;
-  border-bottom: 2px solid var(--BoxMajor);
+  border: 2px ridge #d8d8d8;
+  border-radius: 10px;
   outline: none;
   color: var(--FontMajor);
   text-transform: capitalize;
@@ -62,17 +62,18 @@
 }
 
 .svbtm {
-  background: var(--searchbar);
+  color: #2d96f8;
   text-align: center;
   border: none;
-  width: 10%;
-  border-radius: 8px;
+  width:15%;
+  
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50%;
   outline: none;
-  color: var(--FontMajor);
+  
   font-size: 0.8em;
   text-transform: lowercase;
 }

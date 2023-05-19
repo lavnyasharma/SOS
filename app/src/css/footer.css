@@ -54,7 +54,7 @@
   fill: var(--active);
   max-height: 70%;
   max-width: 70%;
-  min-width: 50%;
+  min-width: 70%;
   min-height: 50%;
   transition: 0.5s;
   

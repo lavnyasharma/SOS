@@ -1,6 +1,7 @@
-
+import random
 from cv001.utils.uid import encode_id
 from datetime import datetime, timedelta
+import uuid
 from django.db import models
 from PIL import Image
 from io import BytesIO
@@ -105,7 +106,10 @@ class user(AbstractBaseUser, PermissionsMixin):
 
     def save(self, phone=None, *args, **kwargs):
         if phone != None:
-            uid = encode_id(p=phone, ct=str(timezone.now()))
+            x = random.randint(0,10000000)
+            y = uuid.uuid4().hex
+            uid = encode_id(p=phone, ct=str(timezone.now(),rand = y))
+            print("uhdgai")
             self.UID = uid
         super(user, self).save(*args, **kwargs)
 

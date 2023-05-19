@@ -31,13 +31,18 @@ class sosView(views.APIView):
             Longitude = str(request.data["long"])
 
             location = geolocator.reverse(Latitude+","+Longitude)
+            print(location)
 
             phone = request.data["pno"]
             lon = request.data["long"]
             lat = request.data["lat"]
+            print(lat , lon)
+            
             jwt = sos_jwt(phone)
+            print(jwt)
             instance = guest_sos.objects.create(
                 pno=phone, long=lon, lat=lat, token=jwt, pin=str(location).split(",")[3])
+            print(instance)
             hinstance = user.objects.filter(
                 pin=str(location).split(",")[3][1:]).all()
            
@@ -84,6 +89,7 @@ class updateView(views.APIView):
 
                     }
                 }
+                print(instance)
                 return Response(response, status=status.HTTP_200_OK)
             else:
                 return Response({"message": "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
@@ -192,3 +198,53 @@ class sosgetallView(views.APIView):
             return Response({"message": "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
    
 
+
+
+class LoggedSosView(views.APIView):
+    permission_classes = (AllowAny,)
+
+    def post(self, request):
+        try:
+            
+            geolocator = Nominatim(user_agent="geoapiExercises")
+            uid = get_uid(get_JWT_token(request=request)) 
+            Latitude = str(request.data["lat"])
+            Longitude = str(request.data["long"])
+            phone = user.objects.filter(UID=uid).first().phone_number
+            location = geolocator.reverse(Latitude+","+Longitude)
+            print(location)
+
+            
+            lon = request.data["long"]
+            lat = request.data["lat"]
+            print(lat)
+            jwt = sos_jwt(phone)
+            print(jwt)
+            instance = guest_sos.objects.create(
+                pno=phone, long=lon, lat=lat, token=jwt, pin=str(location).split(",")[3])
+            print(instance)
+            hinstance = user.objects.filter(
+                pin=str(location).split(",")[3][1:]).all()
+           
+            if hinstance:
+                for i in hinstance:
+                    fmcinstance = fmctoken.objects.filter(
+                        UID=i.UID).all()
+                    if fmcinstance:
+                        for j in fmcinstance:
+                            send_fmc_sms(
+                                j.token, "SOS Alert! Your friend is in danger. Please contact him/her ASAP.")
+            response = {
+                'success': True,
+                'data': {
+                    'token': jwt,
+                    'code': 200,
+                    'message': 'SOS request sent successfully'
+
+                }
+            }
+            return Response(response, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            print(e)
+            return Response({"message": "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)

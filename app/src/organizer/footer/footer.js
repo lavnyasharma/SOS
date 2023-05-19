@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import {
   HomeIco,
   SearchIco,
-  AddIco,
+  Add,
   HeartIcon,
   SettingsIco,
   Ambu,
@@ -42,13 +42,17 @@ export default function Footer() {
       </div>
 
       <div
-        className={isOpen === "freeway" ? "active" : ""}
-        onClick={() => {
-          changeRoute("freeway");
-        }}
-      >
+          className="vslbtn"
+          onClick={() => {
+            history.push("/visuals");
+          }}
+          
+        >
+       
+         
+        
         <div className="Icon_container2">
-          <Ambu />
+        <Add/>
         </div>
       </div>
       

@@ -41,6 +41,26 @@ async function updatecoordsos(token, lati, lon) {
   }
 }
 
+async function loggedsos( lati, lon) {
+  try {
+    const response = await axiosInstance.post("logged/sos/", {
+      lat: lati,
+      long: lon,
+    });
+    console.log(response.data["code"]);
+    if (response.data["data"]["code"] === 200) {
+      ts(response.data["data"]["message"]);
+      localStorage.setItem("guest_sos", "true");
+      localStorage.setItem("guest_token", response.data["data"]["token"]);
+    } else {
+    }
+    console.log(response.data);
+  } catch (error) {
+    console.log(error.response.data["error"]["message"]);
+    te(error.response.data["error"]["message"]);
+  }
+}
+
 async function guestfreewaysos(phone, lati, lon) {
   try {
     const response = await axiosInstance.post("freeway/", {
@@ -64,4 +84,4 @@ async function guestfreewaysos(phone, lati, lon) {
     te(error.response.data["error"]["message"]);
   }
 }
-export { guestsos, updatecoordsos, guestfreewaysos };
+export {loggedsos, guestsos, updatecoordsos, guestfreewaysos };

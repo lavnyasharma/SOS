@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import  React from 'react';
+
 import "../../css/popup.css";
+
 
 function te(msg = "error") {
   console.log(msg);

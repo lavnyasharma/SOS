@@ -19,11 +19,13 @@ def get_tokens_for_user(user):
 
 
 def sos_jwt(pno):
+    print(pno)
     claims = {"UID": str(pno), "exp": datetime.datetime.utcnow(
     ) + datetime.timedelta(minutes=1000), "iat": datetime.datetime.utcnow(), 'jti': str(uuid.uuid1())}
     encoded = str(jwt.encode(claims, encoded_key, algorithm="HS256"))
     spi = encoded.split("'")
-    return spi[1]
+    print(spi)
+    return spi[0]
 
 
 def sos_decode(token):

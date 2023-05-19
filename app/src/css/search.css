@@ -24,7 +24,6 @@
   width: clamp(3em, 12%, 6em);
   flex-shrink: 0;
   flex-grow: 0;
-  background-color: aquamarine;
   height: 100%;
 }
 .header .small-part-2 {

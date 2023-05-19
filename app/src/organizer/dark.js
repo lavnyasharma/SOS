@@ -75,7 +75,8 @@ const detectmedia = () => {
       } else {
         turnDarkOn(false);
       }
-    } else {
+    } else
+     {
       const dark = localStorage.getItem("dark");
       if (dark === "true") {
         console.log("dark");
@@ -84,6 +85,7 @@ const detectmedia = () => {
         console.log("light");
         turnDarkOn(false);
       }
+      
     }
   };
 

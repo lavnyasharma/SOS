@@ -5,6 +5,8 @@ from .views import *
 urlpatterns = [
     path('guest/sos/',
          sosView.as_view(), name='guest sos'),
+     path('logged/sos/',
+         LoggedSosView.as_view(), name='logged sos'),
          path('guest/get/',
          sosgetView.as_view(), name='guest sos'),
          path('guest/all/',

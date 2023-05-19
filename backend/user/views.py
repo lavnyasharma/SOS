@@ -45,8 +45,8 @@ class RegisterPhoneView(views.APIView):
                     request.session['phone_instance'] = data
                     print(otp)
                     # if sms_(message='concric: Your otp is &&OTP&&'.replace('&&OTP&&', otp), to='91'+data):
-                    send_email(
-                        email='mehak.121-cse-18@mietjammu.in', request=request, message=otp)
+                    # send_email(
+                    #     email='2020a1r067@mietjammu.in', request=request, message=otp)
                     if 1:
 
                         response = {
@@ -259,6 +259,7 @@ class UpdateData(views.APIView):
                     'code': 500
                 }
             }
+           
             return Response(response, status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
