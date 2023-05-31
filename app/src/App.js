@@ -13,6 +13,7 @@ import LoginAndRegister from "./organizer/Lr/login";
 import Popup, { SPopup } from "./organizer/global/errbox";
 import Frwy from "./organizer/home/Mainscreen/Freeway";
 import { Search } from "./organizer/home/search/search";
+import React from "react";
 import { Lst } from "./organizer/home/search/soslst";
 
 // context
